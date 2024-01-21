@@ -12,7 +12,10 @@ public class Program {
         employee2.lastname = "Nowak";
         employee2.age = 28;
 
+        Employee employee3 = Employee.read();
+
         employee1.print();
         employee2.print();
+        employee3.print();
     }
 }
