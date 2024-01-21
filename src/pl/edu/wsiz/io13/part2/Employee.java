@@ -3,9 +3,15 @@ package pl.edu.wsiz.io13.part2;
 import java.util.Scanner;
 
 public class Employee {
-    String firstname;
-    String lastname;
-    byte age;
+    private String firstname;
+    private String lastname;
+    private byte age;
+
+    Employee(String firstname, String lastname, byte age) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.age = age;
+    }
 
     void print() {
         System.out.printf("%s %s %d\n", firstname, lastname, age);
@@ -13,17 +19,16 @@ public class Employee {
 
     static Employee read() {
         Scanner scanner = new Scanner(System.in);
-        Employee tmpEmployee = new Employee();
 
         System.out.print("Podaj imię:      ");
-        tmpEmployee.firstname = scanner.next();
+        String firstname = scanner.next();
 
         System.out.print("Podaj nazwisko:  ");
-        tmpEmployee.lastname = scanner.next();
+        String lastname = scanner.next();
 
         System.out.print("Podaj wiek:      ");
-        tmpEmployee.age = scanner.nextByte();
+        byte age = scanner.nextByte();
 
-        return tmpEmployee;
+        return new Employee(firstname, lastname, age);
     }
 }
