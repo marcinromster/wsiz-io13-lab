@@ -1,4 +1,4 @@
-package pl.edu.wsiz.io12.part1;
+package pl.edu.wsiz.io13.part1;
 
 import java.util.Scanner;
 
