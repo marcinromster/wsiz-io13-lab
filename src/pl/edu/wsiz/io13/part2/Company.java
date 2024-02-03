@@ -6,8 +6,15 @@ public class Company {
 
     private ArrayList<Employee> employees = new ArrayList<>();
 
-    void add(Employee employee) {
-        this.employees.add(employee);
+    void add(Employee newEmployee) {
+        for (Employee employee : employees) {
+            if (employee.isEqual(newEmployee)) {
+                System.out.println("Pracownik o tych samych danych znajduje się już na liście!");
+                return;
+            }
+        }
+
+        this.employees.add(newEmployee);
     }
 
     void printEmployees() {
