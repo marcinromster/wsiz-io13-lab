@@ -11,5 +11,9 @@ public class Program {
         company.add();
 
         company.printEmployees();
+
+        company.removeEmployee(2);
+
+        company.printEmployees();
     }
 }
