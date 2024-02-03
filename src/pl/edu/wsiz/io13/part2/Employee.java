@@ -31,4 +31,10 @@ public class Employee {
 
         return new Employee(firstname, lastname, age);
     }
+
+    public boolean isEqual(Employee otherEmployee) {
+        return this.firstname.equalsIgnoreCase(otherEmployee.firstname)
+                && this.lastname.equalsIgnoreCase(otherEmployee.lastname)
+                && this.age == otherEmployee.age;
+    }
 }
