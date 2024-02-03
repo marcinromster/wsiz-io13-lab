@@ -9,4 +9,16 @@ public class Company {
     void add(Employee employee) {
         this.employees.add(employee);
     }
+
+    void printEmployees() {
+        System.out.println("--------------------");
+
+        for (Employee employee : employees) {
+            int index = employees.indexOf(employee);
+            System.out.print(index + 1 + "  ");
+            employee.print();
+        }
+
+        System.out.println("--------------------");
+    }
 }
