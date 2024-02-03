@@ -26,6 +26,11 @@ public class Company {
         this.employees.add(newEmployee);
     }
 
+    void add() {
+        Employee employee = Employee.read();
+        this.add(employee);
+    }
+
     void printEmployees() {
         System.out.println("--------------------");
 
