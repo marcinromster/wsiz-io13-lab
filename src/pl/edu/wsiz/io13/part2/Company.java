@@ -6,12 +6,21 @@ public class Company {
 
     private ArrayList<Employee> employees = new ArrayList<>();
 
-    void add(Employee newEmployee) {
+    boolean employeeExists(Employee newEmployee) {
         for (Employee employee : employees) {
             if (employee.isEqual(newEmployee)) {
-                System.out.println("Pracownik o tych samych danych znajduje się już na liście!");
-                return;
+                return true;
             }
+        }
+
+        return false;
+    }
+
+    void add(Employee newEmployee) {
+        boolean exists = this.employeeExists(newEmployee);
+        if (exists) {
+            System.out.println("Pracownik o tych samych danych znajduje się już na liście!");
+            return;
         }
 
         this.employees.add(newEmployee);
