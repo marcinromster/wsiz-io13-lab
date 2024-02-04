@@ -7,17 +7,19 @@ public class Employee {
     private final String lastname;
     private final byte age;
     private final Sex sex;
+    private final int salary;
 
-    Employee(String firstname, String lastname, byte age, Sex sex) {
+    Employee(String firstname, String lastname, byte age, Sex sex, int salary) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.age = age;
         this.sex = sex;
+        this.salary = salary;
     }
 
     void print() {
         String sexStr = sex == Sex.FEMALE ? "K" : "M";
-        System.out.printf("%s %s %d %s\n", firstname, lastname, age, sexStr);
+        System.out.printf("%s %s %d %s %dzł\n", firstname, lastname, age, sexStr, salary);
     }
 
     static Employee read() {
@@ -34,10 +36,12 @@ public class Employee {
 
         System.out.print("Podaj płeć:      ");
         String sexStr = scanner.next();
-
         Sex sex = sexStr.toUpperCase().charAt(0) == 'K' ? Sex.FEMALE : Sex.MALE;
 
-        return new Employee(firstname, lastname, age, sex);
+        System.out.print("Podaj zarobki:   ");
+        int salary = scanner.nextInt();
+
+        return new Employee(firstname, lastname, age, sex, salary);
     }
 
     public boolean isEqual(Employee otherEmployee) {
