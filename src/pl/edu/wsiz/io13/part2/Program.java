@@ -14,29 +14,45 @@ public class Program {
         int operationNumber = 0;
 
         while (operationNumber != 9) {
-            System.out.println("\nLista operacji:\n");
 
-            System.out.println("1 - wypisz listę pracowników");
-            System.out.println("2 - dodaj pracownika");
-            System.out.println("3 - usuń pracownika");
-            System.out.println("9 - zakończ program\n");
+            System.out.print("\nLista operacji:\n\n" +
+                    "1 - wypisz listę pracowników\n" +
+                    "2 - dodaj pracownika\n" +
+                    "3 - usuń pracownika\n" +
+                    "9 - zakończ program\n\n" +
+                    "Podaj numer operacji: ");
 
-            System.out.print("Podaj numer operacji: ");
             operationNumber = scanner.nextInt();
             System.out.println();
 
-            if (operationNumber == 1) {
-                company.printEmployees();
-            } else if (operationNumber == 2) {
-                company.add();
-            } else if (operationNumber == 3) {
-                System.out.print("Podaj numer pracownika do usunięcia: ");
-                int employeeNumber = scanner.nextInt();
-
-                company.removeEmployee(employeeNumber);
-            } else if (operationNumber != 9) {
-                System.out.print("Operacja o podanym numerze nie istnieje!");
+            switch (operationNumber) {
+                case 1:
+                    company.printEmployees();
+                    break;
+                case 2:
+                    company.add();
+                    break;
+                case 3:
+                    System.out.print("Podaj numer pracownika do usunięcia: ");
+                    int employeeNumber = scanner.nextInt();
+                    company.removeEmployee(employeeNumber);
+                    break;
+                case 9:
+                    break;
+                default:
+                    System.out.print("Operacja o podanym numerze nie istnieje!");
             }
         }
     }
 }
+
+//            System.out.print("""
+//
+//                    Lista operacji:
+//
+//                    1 - wypisz listę pracowników
+//                    2 - dodaj pracownika
+//                    3 - usuń pracownika
+//                    9 - zakończ program
+//
+//                    Podaj numer operacji:\s""");
