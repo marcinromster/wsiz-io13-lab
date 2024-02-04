@@ -11,30 +11,32 @@ public class Program {
         company.add(new Employee("Anna", "Nowak", (byte) 28));
         company.add(new Employee("Piotr", "Nowak", (byte) 32));
 
-        System.out.println("Lista operacji:");
+        int operationNumber = 0;
 
-        System.out.println("1 - wypisz listę pracowników");
-        System.out.println("2 - dodaj pracownika");
-        System.out.println("3 - usuń pracownika");
-        System.out.println("9 - zakończ program");
+        while (operationNumber != 9) {
+            System.out.println("\nLista operacji:\n");
 
-        System.out.print("Podaj numer operacji: ");
-        int operationNumber = scanner.nextInt();
+            System.out.println("1 - wypisz listę pracowników");
+            System.out.println("2 - dodaj pracownika");
+            System.out.println("3 - usuń pracownika");
+            System.out.println("9 - zakończ program\n");
 
-        if (operationNumber == 1) {
-            company.printEmployees();
-        }
-        if (operationNumber == 2) {
-            company.add();
-        }
-        if (operationNumber == 3) {
-            System.out.print("Podaj numer pracownika do usunięcia: ");
-            int employeeNumber = scanner.nextInt();
+            System.out.print("Podaj numer operacji: ");
+            operationNumber = scanner.nextInt();
+            System.out.println();
 
-            company.removeEmployee(employeeNumber);
-        }
-        if (operationNumber == 9) {
-            // exit
+            if (operationNumber == 1) {
+                company.printEmployees();
+            } else if (operationNumber == 2) {
+                company.add();
+            } else if (operationNumber == 3) {
+                System.out.print("Podaj numer pracownika do usunięcia: ");
+                int employeeNumber = scanner.nextInt();
+
+                company.removeEmployee(employeeNumber);
+            } else if (operationNumber != 9) {
+                System.out.print("Operacja o podanym numerze nie istnieje!");
+            }
         }
     }
 }
