@@ -8,12 +8,13 @@ public class Program {
         company.add(new Employee("Anna", "Nowak", (byte) 28));
         company.add(new Employee("Piotr", "Nowak", (byte) 32));
 
-        company.add();
+        System.out.println("Lista operacji:");
 
-        company.printEmployees();
+        System.out.println("1 - wypisz listę pracowników");
+        System.out.println("2 - dodaj pracownika");
+        System.out.println("3 - usuń pracownika");
+        System.out.println("9 - zakończ program");
 
-        company.removeEmployee(2);
-
-        company.printEmployees();
+        System.out.println("Podaj numer operacji:");
     }
 }
