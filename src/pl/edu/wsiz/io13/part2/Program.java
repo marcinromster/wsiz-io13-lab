@@ -7,20 +7,24 @@ public class Program {
         Scanner scanner = new Scanner(System.in);
         Company company = new Company();
 
-        company.add(new Employee("Jan", "Kowalski", (byte) 30));
-        company.add(new Employee("Anna", "Nowak", (byte) 28));
-        company.add(new Employee("Piotr", "Nowak", (byte) 32));
+        company.add(new Employee("Jan", "Kowalski", (byte) 30, Sex.MALE));
+        company.add(new Employee("Anna", "Nowak", (byte) 28, Sex.FEMALE));
+        company.add(new Employee("Piotr", "Nowak", (byte) 32, Sex.MALE));
 
         int operationNumber = 0;
 
         while (operationNumber != 9) {
 
-            System.out.print("\nLista operacji:\n\n" +
-                    "1 - wypisz listę pracowników\n" +
-                    "2 - dodaj pracownika\n" +
-                    "3 - usuń pracownika\n" +
-                    "9 - zakończ program\n\n" +
-                    "Podaj numer operacji: ");
+            System.out.print("""
+
+                    Lista operacji:
+
+                    1 - wypisz listę pracowników
+                    2 - dodaj pracownika
+                    3 - usuń pracownika
+                    9 - zakończ program
+
+                    Podaj numer operacji:\s""");
 
             operationNumber = scanner.nextInt();
             System.out.println();
@@ -45,14 +49,3 @@ public class Program {
         }
     }
 }
-
-//            System.out.print("""
-//
-//                    Lista operacji:
-//
-//                    1 - wypisz listę pracowników
-//                    2 - dodaj pracownika
-//                    3 - usuń pracownika
-//                    9 - zakończ program
-//
-//                    Podaj numer operacji:\s""");
