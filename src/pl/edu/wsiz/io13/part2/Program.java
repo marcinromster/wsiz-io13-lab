@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class Program {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Company company = new Company();
+        ConsoleLogger consoleLogger = new ConsoleLogger();
+
+        Company company = new Company(consoleLogger);
 
         company.add(new Developer("Jan", "Kowalski", (byte) 30, Sex.MALE, 3000, new String[]{"Java", "SQL"}));
         company.add(new Developer("Anna", "Nowak", (byte) 28, Sex.FEMALE, 3500, new String[]{"PHP", "SQL"}));
@@ -22,7 +24,7 @@ public class Program {
                     1 - wypisz listę pracowników
                     2 - dodaj programistę
                     3 - dodaj kierownika
-                    3 - usuń pracownika
+                    4 - usuń pracownika
                     9 - zakończ program
 
                     Podaj numer operacji:\s""");
