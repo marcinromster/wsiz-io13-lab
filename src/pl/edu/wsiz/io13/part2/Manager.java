@@ -13,6 +13,14 @@ public class Manager extends Employee {
     }
 
     @Override
+    public double getTotalSalary() {
+        int bonusLevel = teamSize / 5;
+        double bonus = salary * bonusLevel * 0.05;
+
+        return salary + bonus;
+    }
+
+    @Override
     public String toString() {
         return "K " + super.toString() + " " + teamSize;
     }
