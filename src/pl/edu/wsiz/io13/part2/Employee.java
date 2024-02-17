@@ -5,8 +5,8 @@ public abstract class Employee {
     private final String lastname;
     private final byte age;
     private final Sex sex;
-    private final int salary;
-    private final String[] skills;
+    protected final int salary;
+    protected final String[] skills;
 
     Employee(String firstname, String lastname, byte age, Sex sex, int salary, String[] skills) {
         this.firstname = firstname;
@@ -29,8 +29,10 @@ public abstract class Employee {
         String sexStr = sex == Sex.FEMALE ? "K" : "M";
         String skillsStr = String.join(", ", skills);
 
-        return String.format("%s %s %d %s %dzł [%s]", firstname, lastname, age, sexStr, salary, skillsStr);
+        return String.format("%s %s %d %s %.2fzł [%s]", firstname, lastname, age, sexStr, getTotalSalary(), skillsStr);
     }
+
+    public abstract double getTotalSalary();
 
     public boolean isEqual(Employee otherEmployee) {
         return this.firstname.equalsIgnoreCase(otherEmployee.firstname)

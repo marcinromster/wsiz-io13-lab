@@ -12,6 +12,13 @@ public class Developer extends Employee {
         return "P " + super.toString();
     }
 
+    @Override
+    public double getTotalSalary() {
+        double bonus = salary * skills.length * 0.02;
+
+        return salary + bonus;
+    }
+
     static Developer read() {
         Scanner scanner = new Scanner(System.in);
 
