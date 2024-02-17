@@ -9,7 +9,7 @@ public class Program {
 
         company.add(new Developer("Jan", "Kowalski", (byte) 30, Sex.MALE, 3000, new String[]{"Java", "SQL"}));
         company.add(new Developer("Anna", "Nowak", (byte) 28, Sex.FEMALE, 3500, new String[]{"PHP", "SQL"}));
-        company.add(new Manager("Piotr", "Nowak", (byte) 32, Sex.MALE, 2800, new String[]{"HTML", "CSS", "JS"}));
+        company.add(new Manager("Piotr", "Nowak", (byte) 32, Sex.MALE, 2800, new String[]{"HTML", "CSS", "JS"}, 5));
 
         int operationNumber = 0;
 
