@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Company {
 
-    private ArrayList<Employee> employees = new ArrayList<>();
+    private final ArrayList<Employee> employees = new ArrayList<>();
 
     boolean employeeExists(Employee newEmployee) {
         for (Employee employee : employees) {
@@ -31,7 +31,7 @@ public class Company {
 
         for (int i = 0; i < employees.size(); i++) {
             Employee employee = employees.get(i);
-            System.out.print(i + 1 + "  ");
+            System.out.print(i + 1 + " ");
             employee.print();
         }
 

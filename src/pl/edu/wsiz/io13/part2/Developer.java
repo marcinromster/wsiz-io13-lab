@@ -7,6 +7,11 @@ public class Developer extends Employee {
         super(firstname, lastname, age, sex, salary, skills);
     }
 
+    @Override
+    public String toString() {
+        return "P " + super.toString();
+    }
+
     static Developer read() {
         Scanner scanner = new Scanner(System.in);
 

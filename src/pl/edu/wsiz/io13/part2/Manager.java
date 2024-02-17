@@ -7,6 +7,11 @@ public class Manager extends Employee {
         super(firstname, lastname, age, sex, salary, skills);
     }
 
+    @Override
+    public String toString() {
+        return "K " + super.toString();
+    }
+
     static Manager read() {
         Scanner scanner = new Scanner(System.in);
 
