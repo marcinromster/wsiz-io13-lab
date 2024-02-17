@@ -31,7 +31,7 @@ public class Company {
 
         for (int i = 0; i < employees.size(); i++) {
             Employee employee = employees.get(i);
-            System.out.print(i + 1 + "  ");
+            System.out.print(i + 1 + " ");
             employee.print();
         }
 

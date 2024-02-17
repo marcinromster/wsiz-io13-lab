@@ -7,6 +7,11 @@ public class Developer extends Employee {
         super(firstname, lastname, age, sex, salary, skills);
     }
 
+    void print() {
+        System.out.print("P ");
+        super.print();
+    }
+
     static Developer read() {
         Scanner scanner = new Scanner(System.in);
 
