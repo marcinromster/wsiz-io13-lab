@@ -7,9 +7,9 @@ public class Developer extends Employee {
         super(firstname, lastname, age, sex, salary, skills);
     }
 
-    void print() {
-        System.out.print("P ");
-        super.print();
+    @Override
+    public String toString() {
+        return "P " + super.toString();
     }
 
     static Developer read() {

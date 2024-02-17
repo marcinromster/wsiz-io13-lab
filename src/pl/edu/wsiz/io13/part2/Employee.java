@@ -18,10 +18,18 @@ public abstract class Employee {
     }
 
     void print() {
+        String string = this.toString();
+        System.out.printf("%s\n", string);
+
+//        System.out.printf("%s\n", this);
+    }
+
+    @Override
+    public String toString() {
         String sexStr = sex == Sex.FEMALE ? "K" : "M";
         String skillsStr = String.join(", ", skills);
 
-        System.out.printf("%s %s %d %s %dzł [%s]\n", firstname, lastname, age, sexStr, salary, skillsStr);
+        return String.format("%s %s %d %s %dzł [%s]", firstname, lastname, age, sexStr, salary, skillsStr);
     }
 
     public boolean isEqual(Employee otherEmployee) {

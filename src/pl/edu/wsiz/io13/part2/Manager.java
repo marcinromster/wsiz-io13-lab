@@ -7,9 +7,9 @@ public class Manager extends Employee {
         super(firstname, lastname, age, sex, salary, skills);
     }
 
-    void print() {
-        System.out.print("K ");
-        super.print();
+    @Override
+    public String toString() {
+        return "K " + super.toString();
     }
 
     static Manager read() {
