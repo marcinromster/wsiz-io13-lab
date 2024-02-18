@@ -5,9 +5,10 @@ import java.util.Scanner;
 public class Program {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ConsoleLogger consoleLogger = new ConsoleLogger();
+//        ConsoleLogger consoleLogger = new ConsoleLogger();
+        FileLogger fileLogger = new FileLogger("company-log.txt");
 
-        Company company = new Company(consoleLogger);
+        Company company = new Company(fileLogger);
 
         company.add(new Developer("Jan", "Kowalski", (byte) 30, Sex.MALE, 3000, new String[]{"Java", "SQL"}));
         company.add(new Developer("Anna", "Nowak", (byte) 28, Sex.FEMALE, 3500, new String[]{"PHP", "SQL"}));
