@@ -1,6 +1,6 @@
 package pl.edu.wsiz.io13.part2;
 
-public class ConsoleLogger {
+public class ConsoleLogger implements Logger {
 
     public void info(String message) {
         System.out.println("INFO : " + message);
