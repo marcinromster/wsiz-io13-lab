@@ -6,7 +6,7 @@ public class Program {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 //        ConsoleLogger consoleLogger = new ConsoleLogger();
-        FileLogger fileLogger = new FileLogger("company-log.txt");
+        FileLogger fileLogger = new FileLogger("company-log.txt", true, true);
 
         Company company = new Company(fileLogger);
 
