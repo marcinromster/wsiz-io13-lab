@@ -5,9 +5,16 @@ import java.util.Scanner;
 public class Program {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ConsoleLogger consoleLogger = new ConsoleLogger();
 
-        Company company = new Company(consoleLogger);
+        ConsoleLogger consoleLogger = new ConsoleLogger();
+        FileLogger infoFileLogger = new FileLogger("company-info-log.txt", true, false);
+        FileLogger errorFileLogger = new FileLogger("company-error-log.txt", false, true);
+        FileLogger allFileLogger = new FileLogger("company-all-log.txt", true, true);
+
+        Logger[] loggers = {consoleLogger, infoFileLogger, errorFileLogger, allFileLogger};
+        MultiLogger multiLogger = new MultiLogger(loggers);
+
+        Company company = new Company(multiLogger);
 
         company.add(new Developer("Jan", "Kowalski", (byte) 30, Sex.MALE, 3000, new String[]{"Java", "SQL"}));
         company.add(new Developer("Anna", "Nowak", (byte) 28, Sex.FEMALE, 3500, new String[]{"PHP", "SQL"}));

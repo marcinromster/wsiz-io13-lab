@@ -389,3 +389,70 @@ oraz w przypadku nieodnalezienia pracownika o podanym numerze:
 ```
 ERROR: Próba usunięcia pracownika o niepoprawnym numerze porządkowym: 6
 ```
+
+#### 2.19
+
+Utwórz klasę `FileLogger` implementującą metody: `info` i `error`. Klasa powinna zawierać prywatne pole `writer`
+typu `PrintWriter`. Konstruktor klasy `FileLogger` powinien przyjąć następującą postać:
+
+```
+public FileLogger(String fileName) {
+    try {
+        FileOutputStream fileStream = new FileOutputStream(fileName, true);
+        this.writer = new PrintWriter(fileStream, true);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+```
+
+Klasa `PrintWriter` posiada metodę `printf`. Metody `info` i `error`, za pomocą obiektu `writer`, powinny zapisywać logi
+w postaci:
+
+```
+[27-02-2021 10:00:00] INFO : mój log
+[27-02-2021 10:01:00] ERROR: mój log
+```
+
+W celu uzyskania aktualnego czasu należy utworzyć instancję klasy `Date`:
+
+```
+Date now = new Date();
+```
+
+Do sformatowania daty można wykorzystać klasę `SimpleDateFormat`:
+
+```
+SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+String dateTimeString = simpleDateFormat.format(now);
+```
+
+W klasie `Company` zamień typ pola `logger` na `FileLogger`.
+Utwórz i przekaż do klasy `Company` instancję klasy `FileLogger` zapisującą logi do pliku `company-log.txt`
+
+Przetestuj działanie programu.
+
+#### 2.20
+
+Klasa `Company` powinna pozwalać na współpracę z dowolnym typem klasy zapisującej logi.
+W tym celu zaprojektuj i zdefiniuj nowy interfejs `Logger`, pozwalający na taką współpracę.
+
+Nowy interfejs powinien być implementowany przez klasy: `ConsoleLogger` oraz `FileLogger`.
+Pole `logger` klasy `Company` powinno przyjąć typ `Logger`.
+
+#### 2.21
+
+Zmodyfikuj klasę `FileLogger` aby pozwalała na wybór poziomu logowania.
+W tym celu dodaj do konstruktora dwa parametry typu `boolean`: `logInfo` i `logError`.
+Ustawienie flagi na true oznacza włączenie odpowiedniego poziomu logowania.
+
+#### 2.22
+
+Wymagane jest skonfigurowanie logowania w taki sposób aby wszyskie logi poziomu `info` trafiały do pliku:
+`company-info-log.txt`, natomiast wszystkie logi poziomu `error` do pliku: `company-error-log.txt`.
+Dodatkowo wszystkie logi powinny trafiać również na konsolę.
+
+Zaprojektuj klasę `MultiLogger` implementującą interfejs `Logger` i przyjmującą jako argument konstruktora
+tablicę obiektów typu `Logger`.
+Implementacja metod `info` i `error` powinna polegać na wykonaniu korespondującej metody na przesłanych
+uprzednio obiektach typu `Logger`, klasa ta powinna pełnić jedynie rolę pośrednika.

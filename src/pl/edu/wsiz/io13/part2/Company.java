@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class Company {
 
     private final ArrayList<Employee> employees = new ArrayList<>();
-    private final ConsoleLogger logger;
+    private final Logger logger;
 
-    Company(ConsoleLogger logger) {
+    Company(Logger logger) {
         this.logger = logger;
     }
 
